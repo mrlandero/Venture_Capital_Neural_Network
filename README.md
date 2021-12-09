@@ -207,7 +207,7 @@ Step 14: Compile and fit the model using the `binary_crossentropy` loss function
 
 The following image shows the first few epochs (iterations) of the model training process:
 
-![nn_A1 Training](nn_A2_training.png)
+![nn_A1 Training](nn_A2_trainig.png)
 
 Step 15: Evaluate the model using the test data to determine the model’s loss and accuracy.
 
