@@ -131,12 +131,60 @@ The rsult should be a dataframe with encoded values for all of the categorical d
 
 ![Categorical Data Encoded](encoded_categorical.png)
 
-
 Step 5: Add the original DataFrame’s numerical variables to the DataFrame containing the encoded variables.
 
 The new dataframe should concatenate the categorical variables with the numerical features:
 
 ![Concatenated Dataframe](concat_dataframe.png)
 
+Step 6: Using the preprocessed data, create the features (`X`) and target (`y`) datasets. The target dataset should be defined by the preprocessed DataFrame column “IS_SUCCESSFUL”. The remaining columns should define the features dataset. 
 
-Step 6: 
+y dataset:
+
+![y dataset](y_dataset.png)
+
+X dataset:
+
+![X dataset](X_dataset.png)
+
+Step 7: Split the features and target sets into training and testing datasets.
+
+```python
+# Split the preprocessed data into a training and testing dataset
+# Assign the function a random_state equal to 1
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
+```
+
+Step 8: Use scikit-learn's `StandardScaler` to scale the features data.
+
+```python
+# Create a StandardScaler instance
+scaler = StandardScaler()
+
+# Fit the scaler to the features training dataset
+X_scaler = scaler.fit(X_train)
+
+# Fit the scaler to the features training dataset
+X_train_scaled = X_scaler.transform(X_train)
+X_test_scaled = X_scaler.transform(X_test)
+```
+
+Step 9: Create a deep neural network by assigning the number of input features, the number of layers, and the number of neurons on each layer using Tensorflow’s Keras.
+
+The following image shows the structure of our resulting Neural Network:
+
+![Original NN Structure](nn_structure.png)
+
+Step 10: Compile and fit the model using the `binary_crossentropy` loss function, the `adam` optimizer, and the `accuracy` evaluation metric.
+
+The following image shows the first few epochs (iterations) of the model training process:
+
+![Fitting the NN Model](original_train.png)
+
+Step 11: Evaluate the model using the test data to determine the model’s loss and accuracy.
+
+The following image displays the evaluation results using out testing data:
+
+![Original Model Evaluation](original_evaluation.png)
+
+Step 12: 
