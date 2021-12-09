@@ -84,4 +84,59 @@ The Apple M1 Chip is not currently compatible with a typical Tensorflow installa
 
 You are set with the installations now!
 
+---
 
+## Usage
+
+To use the Venture Capital Neural Network application, simply clone the repository and run the Jupyter Notebook **venture_funding_with_deep_learning.ipynb** either in VSC, or in Jupyter Lab.
+
+Step 1: Imports
+
+```python
+# Imports
+import pandas as pd
+from pathlib import Path
+import tensorflow as tf
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Sequential
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler,OneHotEncoder
+```
+
+Step 2: Read the `applicants_data.csv` file into a Pandas DataFrame. Review the DataFrame, looking for categorical variables that will need to be encoded, as well as columns that could eventually define your features and target variables. 
+
+```python
+# Read the applicants_data.csv file from the Resources folder into a Pandas DataFrame
+applicant_data_df = pd.read_csv(
+  Path("./Resources/applicants_data.csv")
+)
+
+# Review the DataFrame
+applicant_data_df.head()
+```
+
+Step 3: Drop the “EIN” (Employer Identification Number) and “NAME” columns from the DataFrame, because they are not relevant to the binary classification model.
+
+```python
+# Drop the 'EIN' and 'NAME' columns from the DataFrame
+applicant_data_df = applicant_data_df.drop(columns=["EIN", "NAME"])
+
+# Review the DataFrame
+applicant_data_df.head()
+```
+
+Step 4: Encode the dataset’s categorical variables using `OneHotEncoder`, and then place the encoded variables into a new DataFrame.
+
+The rsult should be a dataframe with encoded values for all of the categorical data:
+
+![Categorical Data Encoded](encoded_categorical.png)
+
+
+Step 5: Add the original DataFrame’s numerical variables to the DataFrame containing the encoded variables.
+
+The new dataframe should concatenate the categorical variables with the numerical features:
+
+![Concatenated Dataframe](concat_dataframe.png)
+
+
+Step 6: 
