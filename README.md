@@ -259,3 +259,10 @@ file_path = Path("AlphabetSoupA2.h5")
 # Export your model to a HDF5 file
 nn_A2.save(file_path)
 ```
+
+---
+
+## Contributors
+
+**Created by:** Tony Landero<br>
+**Email Adress:** mr.landero@gmail.com
