@@ -220,3 +220,42 @@ Step 16: Create Alternative NN Model 2
 The following image displays the structure of the first alternative neural network (nn_A1), with 2 hidden layers and 100 epochs:
 
 ![nn_A2 Structure](nn_A3_structure.png)
+
+Step 17: Compile and fit the model using the `binary_crossentropy` loss function, the `adam` optimizer, and the `accuracy` evaluation metric.
+
+The following image shows the first few epochs (iterations) of the model training process:
+
+![nn_A2 Training](nn_A3_training.png)
+
+Step 18: Evaluate the model using the test data to determine the model’s loss and accuracy.
+
+The following image displays the evaluation results using out testing data:
+
+![nn_A2 Evaluation](nn_A3_evaluation.png)
+
+Step 19: Analysis and Comparison of Models
+
+Based on the evaluations, it is clear that the best model to use would be the Original Model. My reasoning behind this is the fact that the original model had an accuracy of 0.7280, the first alternate(nn_A1) returned an accuracy of 0.7297. The final model gave us an accuracy of 0.7290.
+While the nn_A1 and nn_A2 did achieve a slightly higher accuracy, the difference is minimal. When the accuracy is similar across models, I will always select the simplest of the models. The original model only had 2 hidden layers and 50 epochs. There is no need to add more complexity to the model since the change is minimal. The original model was the simplest of the 3.  
+
+Step 20: Save each of your alternative models as an HDF5 file.
+
+Save and export AlphabetSoupA1.h5:
+
+```python
+# Set the file path for the first alternative model
+file_path = Path("AlphabetSoupA1.h5")
+
+# Export your model to a HDF5 file
+nn_A1.save(file_path)
+```
+
+Save and export AlphabetSoupA2.h5:
+
+```python
+# Set the file path for the second alternative model
+file_path = Path("AlphabetSoupA2.h5")
+
+# Export your model to a HDF5 file
+nn_A2.save(file_path)
+```
