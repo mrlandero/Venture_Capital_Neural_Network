@@ -187,4 +187,36 @@ The following image displays the evaluation results using out testing data:
 
 ![Original Model Evaluation](original_evaluation.png)
 
-Step 12: 
+Step 12: Save and export your model to an HDF5 file, and name the file `AlphabetSoup.h5`.
+
+```python
+# Set the model's file path
+file_path = Path("AlphabetSoup.h5")
+
+# Export your model to a HDF5 file
+nn.save(file_path)
+```
+
+Step 13: Create Alternative NN Model 1
+
+The following image displays the structure of the first alternative neural network (nn_A1), with 3 hidden layers:
+
+![nn_A1 Structure](nn_A2_structure.png)
+
+Step 14: Compile and fit the model using the `binary_crossentropy` loss function, the `adam` optimizer, and the `accuracy` evaluation metric.
+
+The following image shows the first few epochs (iterations) of the model training process:
+
+![nn_A1 Training](nn_A2_training.png)
+
+Step 15: Evaluate the model using the test data to determine the model’s loss and accuracy.
+
+The following image displays the evaluation results using out testing data:
+
+![nn_A1 Evaluation](nn_A2_evaluation.png)
+
+Step 16: Create Alternative NN Model 2
+
+The following image displays the structure of the first alternative neural network (nn_A1), with 2 hidden layers and 100 epochs:
+
+![nn_A2 Structure](nn_A3_structure.png)
