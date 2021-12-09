@@ -266,3 +266,9 @@ nn_A2.save(file_path)
 
 **Created by:** Tony Landero<br>
 **Email Adress:** mr.landero@gmail.com
+
+---
+
+## License
+
+MIT
